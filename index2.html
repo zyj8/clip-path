@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小鱼</title>
+<style>
+.shard-wrap {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: .5s;
+  z-index: 2;
+}
+/* crow 摇尾巴的小鱼 */
+.crow .shard-wrap:nth-child(1) .shard {
+  clip-path: polygon(5% 50%,0% 35%,15% 50%);
+  background-color: #2C323D;
+
+  animation: shard-a 1s linear infinite;
+}
+.crow .shard-wrap:nth-child(2) .shard {
+  clip-path: polygon(5% 50%,0% 65%,15% 50%);
+  background-color: #63676F;
+  animation: shard-b 1s linear infinite;
+}
+.crow .shard-wrap:nth-child(3) .shard {
+  /* clip-path: polygon(22.9% 44.5%,35.2% 50.2%,25% 48.9%); */
+  clip-path: polygon(15% 50%,50% 25%,85% 50%);
+  background-color: #63676F
+}
+.crow .shard-wrap:nth-child(4) .shard {
+  /* clip-path: polygon(61.7% 44.7%,64.4% 44%,65.1% 36.2%); */
+  clip-path: polygon(15% 50%,50% 75%,85% 50%);
+  background-color:  #0F1622
+}
+@keyframes shard-a {
+    10% {
+        clip-path: polygon(5% 50%,0% 35%,15% 50%);  
+    }
+    50% {
+        background-color: #63676F;
+        clip-path: polygon(6% 50%,3% 37%,15% 50%);
+    }
+    100% {
+        clip-path: polygon(5% 50%,0% 35%,15% 50%);
+    }
+}
+@keyframes shard-b {
+    10% {
+        clip-path: polygon(5% 50%,0% 65%,15% 50%);  
+    }
+    50% {
+        background-color: #2C323D;
+        clip-path: polygon(6% 50%,3% 63%,15% 50%);
+    }
+    100% {
+        clip-path: polygon(5% 50%,0% 65%,15% 50%);
+    }
+}
+.crow{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    top: 50vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* border: 1px solid #ddd; */
+}
+.shard{ height: 100%; }
+</style>
+</head>
+
+<body>
+    <div class="wrap crow left-to-right">
+        <div class="shard-wrap">
+            <div class="shard"></div>
+        </div>
+        <div class="shard-wrap">
+            <div class="shard"></div>
+        </div>
+        <div class="shard-wrap">
+            <div class="shard"></div>
+        </div>
+        <div class="shard-wrap">
+            <div class="shard"></div>
+        </div>
+    </div>
+</body>
+</html>

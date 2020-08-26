@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clip-path</title>
+    <style>
+    .shape-animate {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #986785;
+        /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%); */
+        clip-path: polygon(5% 50%, 0% 35%, 15% 50%, 50% 25%, 100% 50%, 50% 75%, 15% 50%, 0% 65%, 0% 65%);
+
+        /* //动画参数 */
+        transition: .3s;
+        animation: shape-ani 10s linear infinite;
+    }
+    .shape-animate1 {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        top: 50%;
+        left: 50%;
+        transform: translate(50%, -50%);
+        background: red;
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%);
+        
+        /* //动画参数 */
+        transition: .3s;
+        animation: shape-ani 5s linear infinite;
+    }
+
+    @keyframes shape-ani {
+    10% { 
+        /* clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%); */
+        clip-path: polygon(5% 50%, 0% 35%, 15% 50%, 50% 25%, 100% 50%, 50% 75%, 15% 50%, 0% 65%, 0% 65%);
+    }
+    /* 20% {
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
+    }
+    30% {
+        background: green;
+        clip-path: polygon(100% 38%, 82% 100%, 82% 100%, 18% 100%, 0% 38%, 0% 38%, 0% 38%, 0% 38%, 50% 0%);
+    } */
+    40% {
+        clip-path: polygon(100% 38%, 82% 100%, 82% 100%, 18% 100%, 0% 38%, 0% 38%, 0% 38%, 0% 38%, 50% 0%);
+    }
+    50% {
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 100% 75%, 50% 100%, 0% 75%, 0% 75%, 0% 25%, 0% 25%);
+    }
+    60% {
+        background: black;
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 100% 75%, 50% 100%, 0% 75%, 0% 75%, 0% 25%, 0% 25%);
+    }
+    70% {
+        clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 25% 100%, 0% 60%, 10% 20%, 50% 0%);
+    }
+    80% {
+        clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 25% 100%, 0% 60%, 10% 20%, 50% 0%);
+    }
+    }
+    </style>
+</head>
+<body>
+    <div class="shape-animate"></div>
+    <!-- <div class="shape-animate1"></div> -->
+</body>
+</html>
